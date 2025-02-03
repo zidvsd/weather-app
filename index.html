@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+
+  <!-- Tailwind CSS via CDN with Custom Config -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          container: {
+            center: true,
+            padding: '1rem',
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body class="font-poppins flex justify-center items-center  p-8 ">
+
+  <main class="container max-auto p-6 flex items-center justify-center">
+    <div
+      class="main-container   mt-12 w-60 flex flex-col py-4 px-4 bg-gradient-to-r from-cyan-200 to-green-200 rounded-md  bg-gradient-to-r from-cyan-600 to-green-500">
+      <div class="input-container flex flex-row  relative items-center justify-center">
+        <input class="input-city text-black rounded-full focus:outline outline-white pl-2 -mr-6 mr-1  
+.placeholder-white
+" type="text" placeholder="Enter the city">
+        <button class="search-btn"><img src="/assets/images/icons/search_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.svg"
+            alt=""></button>
+      </div>
+      <section class="weather-info mt-4  hidden">
+        <div class="location-date-container flex flex-row items-center justify-between ">
+          <div class="location flex flex-row items-center gap-x-1">
+            <img src="/assets/images/icons/location_on_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+            <h1 class="country-text text-white font-bold">Manila</h1>
+          </div>
+          <h4 class="current-date-text text-white font-bold text-sm">
+            Wed, 07, Aug
+          </h4>
+        </div>
+
+        <div class="weather-summary-container flex flex-row justify-between mt-6 items-center">
+          <img class="w-20 weather-summary-img" src="/assets/images/thumbnails/cloudy.png" alt="">
+          <div class="weather-summary-info ">
+            <h1 class="temp-text text-white font-bold">29 °C</h1>
+            <h3 class="text-white weather-condition">Rain</h3>
+          </div>
+
+        </div>
+
+
+        <div class="weather-conditions-container  mt-6 flex flex-row justify-between">
+          <div class="condition-item  flex flex-row items-center gap-x-2">
+            <img src="/assets/images/icons/water_drop_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+
+            <div class="condition-item ">
+              <h4 class="text-white text-sm">Humidity</h4>
+              <h4 class="text-white humidity-text text-sm font-bold text-xs">55%</h4>
+            </div>
+          </div>
+          <div class="condition-item flex flex-row items-center gap-x-2">
+            <img src="/assets/images/icons/air_24dp_UNDEFINED_FILL0_wght400_GRAD0_opsz24.svg" alt="">
+
+            <div class="condition-item">
+              <h4 class="text-white text-sm  ">Wind Speed</h4>
+              <h4 class="wind-text text-white text-xs font-bold">2 M/s</h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="forecast-items-container mt-4 flex flex-row gap-x-3 overflow-x-auto pb-2">
+          <div
+            class="forecast-item shrink-0 flex flex-col justify-center items-center px-3 py-1 rounded-lg bg-[rgba(255,255,255,0.3)] gap-y-1 hover:bg-[rgb(0,0,0,0.1)] transition duration-2000">
+            <h4 class="forecast-item date text-xs text-white">05 Aug</h4>
+            <img src="/assets/images/thumbnails/thunderstorm.png" class="size-8" alt="">
+            <h4 class="forecast-item-temp text-white font-bold text-xs">29 °C </h4>
+          </div>
+          <div
+            class="forecast-item shrink-0 flex flex-col justify-center items-center px-3 py-1 rounded-lg gap-y-1 bg-[rgba(255,255,255,0.3)] hover:bg-[rgb(0,0,0,0.1)] transition duration-2000">
+            <h4 class="forecast-item date text-xs text-white">05 Aug</h4>
+            <img src="/assets/images/thumbnails/thunderstorm.png" class="size-8" alt="">
+            <h4 class="forecast-item-temp text-white font-bold text-xs">29 °C </h4>
+          </div>
+          <div
+            class="forecast-item shrink-0 flex flex-col justify-center items-center px-3 py-1 rounded-lg gap-y-1 bg-[rgba(255,255,255,0.3)] hover:bg-[rgb(0,0,0,0.1)] transition duration-2000 ">
+            <h4 class="forecast-item date text-xs text-white">05 Aug</h4>
+            <img src="/assets/images/thumbnails/thunderstorm.png" class="size-8" alt="">
+            <h4 class="forecast-item-temp text-white font-bold text-xs">29 °C </h4>
+          </div>
+          <div
+            class="forecast-item shrink-0 flex flex-col justify-center items-center px-3 py-1 rounded-lg gap-y-1 bg-[rgba(255,255,255,0.3)] hover:bg-[rgb(0,0,0,0.1)] transition duration-2000">
+            <h4 class="forecast-item date text-xs text-white">05 Aug</h4>
+            <img src="/assets/images/thumbnails/thunderstorm.png" class="size-8" alt="">
+            <h4 class="forecast-item-temp text-white font-bold text-xs">29 °C </h4>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="search-city section-message text-center hidden">
+        <img src="/assets/images/thumbnails/man-search-document-file-catalog-600nw-1803864835.png" class="message-img"
+          alt="">
+        <div class="">
+          <h1 class="font-bold text-white">Search City</h1>
+          <h4 class="text-white text-sm">Find out about the weather conditions of the city</h4>
+        </div>
+      </section>
+
+      <section class="not-found section-message text-center">
+        <img src="/assets/images/thumbnails/pngtree-error-404-page-not-found-png-image_3832696.png" class="message-img"
+          alt="">
+        <div class="">
+          <h1 class="font-bold text-white text-2xl">Search City</h1>
+          <h4 class="text-white text-sm">Find out about the weather conditions of the city</h4>
+        </div>
+      </section>
+    </div>
+
+
+
+  </main>
+
+  <script src="/js/script.js" defer></script>
+</body>
+
+</html>

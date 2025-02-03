@@ -1,0 +1,28 @@
+body {
+  background-image: url(/assets/images/thumbnails/bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  background: rgba(255, 255, 255, 0.1); /* Add slight transparency */
+  z-index: -1; /* Push it behind the content */
+}
+.forecast-items-container::-webkit-scrollbar {
+  height: 6px;
+}
+.forecast-items-container::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0, 0.1);
+  border-radius: 99px;
+}
+.forecast-items-container::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0, 0.1);
+}
